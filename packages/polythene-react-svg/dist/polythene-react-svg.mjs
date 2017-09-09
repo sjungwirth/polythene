@@ -5,7 +5,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var SVG = ViewComponent(_extends({}, coreSVG));
 
-SVG.theme = coreSVG.theme;
+SVG.theme = function () {}; //core.theme;
 SVG.displayName = "SVG";
 
 export { SVG };

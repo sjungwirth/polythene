@@ -1,0 +1,10 @@
+@import "vars.css";
+
+.pe-svg {
+  line-height: 1;
+
+  svg {
+    width: "inherit";
+    height: "inherit";
+  }
+}

@@ -6,8 +6,9 @@
   "module": "dist/polythene-core-svg.mjs",
   "scripts": {
     "clean": "rm -rf dist && mkdir dist",
+    "build:css": "node ../../scripts/writeComponentCSS.js",
     "rollup": "../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.umd.js && ../../node_modules/rollup/bin/rollup -c ../../scripts/rollup.es.js",
-    "build": "npm run rollup"
+    "build": "npm run rollup && yarn run build:css"
   },
   "files": [
     "dist",
@@ -19,5 +20,8 @@
     "polythene-theme": "^1.0.0-rc.5"
   },
   "author": "Arthur Clemens <arthurclemens@gmail.com> (http://visiblearea.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "postcss-cli": "^4.1.1"
+  }
 }

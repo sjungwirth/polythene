@@ -1,0 +1,40 @@
+
+:root {
+  --color_light:  "red";
+  --color_dark:   currentcolor;
+}
+
+@define-mixin color $color, $color: currentcolor {
+  svg {
+    path,
+    rect,
+    circle,
+    polygon {
+      &:not([fill=none]) {
+        fill: var($color, currentcolor)
+      }
+    }
+  }
+}
+
+.pe-svg {
+  line-height: 1;
+  color: inherit;
+
+  svg {
+    width: inherit;
+    height: inherit;
+    color: inherit;
+  }
+}
+
+.pe-svg.pe-dark-tone,
+.pe-svg .pe-dark-tone {
+  @mixin color var(--color_dark);
+}
+
+.pe-svg,
+.pe-svg.pe-light-tone,
+.pe-svg .pe-light-tone {
+  @mixin color var(--color_light);
+}
